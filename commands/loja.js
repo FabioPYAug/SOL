@@ -68,6 +68,16 @@ const segundos = milesegundos / 1000
 const imagenspath = path.join(__dirname, '..', 'comunidade', 'imagens.json');
 const frasespath = path.join(__dirname, '..', 'comunidade', 'dinheiro.json');
 const frasespoyo = path.join(__dirname, '..', 'comunidade', 'palavras.json');
+const sussurrosfrases = path.join(__dirname, '..', 'comunidade', 'risorius.json');
+
+function readDataFromFilesussuros(){
+    if (fs.existsSync(sussurrosfrases)) {
+    const JSONDADOS = fs.readFileSync(sussurrosfrases, 'utf8');
+    return JSON.parse(JSONDADOS);
+    }
+}
+const datasussurros = readDataFromFilesussuros();
+
 
 function readDataFromFile(){
     if (fs.existsSync(frasespath)) {
@@ -110,7 +120,7 @@ module.exports = {
                 )
         )
         .addUserOption(option => 
-            option.setName('alvo')
+            option.setName('inimigo')
                 .setDescription('Escolha um usuário para compras específicas!')
                 .setRequired(false)
                 .setRequired(true)
@@ -124,7 +134,7 @@ module.exports = {
         }, milesegundos)
         const user = interaction.member;
         const userId = user.id;
-        const member = interaction.options.getMember('alvo');
+        const member = interaction.options.getMember('inimigo');
         const memberId = member.id;
         const userMapping = {
             [fabioid]: 'fabio',
@@ -155,7 +165,7 @@ module.exports = {
             return true;
         }
         const categoria = interaction.options.getString('categoria');
-        const alvo = interaction.options.getUser('alvo');
+        const alvo = interaction.options.getUser('inimigo');
         const embed = new EmbedBuilder()
             .setTitle('LOJA ECCLESIA')
             .setDescription(`Ecclesia é a MAIOR loja de Zoystea! Tendo tudo que um aventureiro, fazendeiro ou até morador quer!`)
@@ -463,14 +473,14 @@ module.exports = {
             //OPÇÕES DA LOJA
             const opcoesgerais = [
                 { label: 'Baú Mímico de Efeitos', description: '3500 ZENS', value: 'micefeitos' },
-                { label: 'Vaso Mímico de Poções', description: '75000 ZENS', value: 'micpocoes' },
+                { label: 'Vaso Mímico de Poções', description: '90000 ZENS', value: 'micpocoes' },
             ]
             //LOJA
             embed.addFields(
                 { name: '》══════════════════════════════════════════════ ◈', value: '\n'},
                 { name: '\n「MÍMICOS」', value: `\u200B` },
                 { name: 'Baú Mímico de Efeitos', value: '3500 ZENS\nAbrirá uma caixa Mimica que te dará um efeito aleatório do Risorius.', inline: true },
-                { name: 'Vaso Mímico de Poções', value: '75000 ZENS\nAbrirá um vaso Mimico que te dará uma poção aleatória para Campanhas de Tormenta20', inline: true },
+                { name: 'Vaso Mímico de Poções', value: '90000 ZENS\nAbrirá um vaso Mimico que te dará uma poção aleatória para Campanhas de Tormenta20', inline: true },
                 { name: '》══════════════════════════════════════════════ ◈', value: '\n'},
             );
             const row = new ActionRowBuilder()
@@ -491,8 +501,8 @@ module.exports = {
                 let response;
                 switch (i.values[0]) {
                     case 'micpocoes':
-                        if(Cobrar(75000)){
-                            Compra(75000);
+                        if(Cobrar(90000)){
+                            Compra(90000);
                             const canvas = Canvas.createCanvas(750, 750);
                             const context = canvas.getContext('2d');
                             const image = await Canvas.loadImage('https://images2.imgbox.com/ce/58/kMJFbSmU_o.png');
@@ -551,28 +561,26 @@ module.exports = {
         if(categoria == "risorius"){
             //OPÇÕES DA LOJA
             const opcoesgerais = [
-                { label: 'Entrelaçados', description: '2500 ZENS', value: 'lacos' },
+                { label: 'Entrelaçados', description: '5000 ZENS', value: 'lacos' },
                 { label: 'Ágil', description: '3000 ZENS', value: 'agil' },
-                { label: 'Protegido', description: '5000 ZENS', value: 'protegido' },
-                { label: 'Higienizar Impurezes', description: '10000 ZENS', value: 'higiene' },
+                { label: 'Protegido', description: '15000 ZENS', value: 'protegido' },
+                { label: 'Higienizar Impurezes', description: '30000 ZENS', value: 'higiene' },
                 { label: 'Sorte Minuscula', description: '300 ZENS', value: 'coincidente' },
                 { label: 'Sorte Pequena', description: '750 ZENS', value: 'venturado' },
                 { label: 'Sorte Média', description: '5000 ZENS', value: 'afortunado' },
-                { label: 'Sorte Grande', description: '10000 ZENS', value: 'contingente' },
-                { label: 'Sorte Enorme', description: '20000 ZENS', value: 'bencao' },
+                { label: 'Sorte Grande', description: '17777 ZENS', value: 'contingente' },
             ]
             //LOJA
             embed.addFields(
                     { name: '\n「RISORIUS」', value: `\u200B` },
                     { name: 'Ágil', value: '3000 ZENS\nIrá dar efeito de Ágil', inline: true },
-                    { name: 'Entrelaçados', value: '2500 ZENS\nIrá dar efeito de Entrelaçado', inline: true },
-                    { name: 'Higienizar Impurezes', value: '10000 ZENS\nIrá tirar todos os seus efeitos negativos', inline: true },
-                    { name: 'Protegido', value: '5000 ZENS\nIrá dar efeito de Protegido', inline: true },
+                    { name: 'Entrelaçados', value: '5000 ZENS\nIrá dar efeito de Entrelaçado', inline: true },
+                    { name: 'Higienizar Impurezes', value: '30000 ZENS\nIrá tirar todos os seus efeitos negativos', inline: true },
+                    { name: 'Protegido', value: '15000 ZENS\nIrá dar efeito de Protegido', inline: true },
                     { name: 'Sorte Minuscula', value: '500 ZENS\nIrá dar sorte minuscula', inline: true },
                     { name: 'Sorte Pequena', value: '1050 ZENS\nIrá dar sorte pequena', inline: true },
                     { name: 'Sorte Média', value: '5000 ZENS\nIrá dar sorte média', inline: true },
-                    { name: 'Sorte Grande', value: '10000 ZENS\nIrá dar sorte grande', inline: true },
-                    { name: 'Sorte Enorme', value: '20000 ZENS\nIrá dar sorte enorme', inline: true },
+                    { name: 'Sorte Grande', value: '17777 ZENS\nIrá dar sorte grande', inline: true },
                     { name: '》══════════════════════════════════════════════ ◈', value: '\n'},
             );
             const row = new ActionRowBuilder()
@@ -593,8 +601,8 @@ module.exports = {
                 let response;
                 switch (i.values[0]) {
                     case 'higiene':
-                        if(Cobrar(10000)){
-                            Compra(10000);
+                        if(Cobrar(30000)){
+                            Compra(30000);
                             if (user.roles.cache.has(iddesgraca)) {await user.roles.remove(iddesgraca);
                             }
                             if (user.roles.cache.has(idinfortunado)) {await user.roles.remove(idinfortunado);
@@ -637,9 +645,9 @@ module.exports = {
                             await interaction.channel.send({content: "Você já tem esse produto!", ephemeral: true})
                             return;
                         }
-                        if(Cobrar(5000)){
-                            Compra(5000);
-                            interaction.member.roles.add(idcontigente)
+                        if(Cobrar(15000)){
+                            Compra(15000);
+                            interaction.member.roles.add(idprotegido)
                             response = 'Compra realizada com sucesso!'
                             }else{invalidado == true
                             return}
@@ -697,32 +705,20 @@ module.exports = {
                             await interaction.channel.send({content: "Você já tem esse produto!", ephemeral: true})
                             return;
                         }
-                        if(Cobrar(10000)){
-                        Compra(10000);
+                        if(Cobrar(17777)){
+                        Compra(17777);
                         interaction.member.roles.add(idcontigente)
                         response = 'Compra realizada com sucesso!'
                         }else{invalidado == true
                         return}
-                        return;
-                    case 'bencao':
-                        if(user.roles.cache.has(idbencao)){
-                            await interaction.channel.send({content: "Você já tem esse produto!", ephemeral: true})
-                            return;
-                        }
-                        if(Cobrar(20000)){
-                        Compra(20000);
-                        interaction.member.roles.add(idbencao)
-                        response = 'Compra realizada com sucesso!'
-                        }else{invalidado == true
-                            return}
                         return;
                     case 'lacos':
                         if(user.roles.cache.has(identrelacado)){
                             await interaction.channel.send({content: "Você já tem esse produto!", ephemeral: true})
                             return;
                         }
-                        if(Cobrar(2500)){
-                            Compra(2500);
+                        if(Cobrar(5000)){
+                            Compra(5000);
                             interaction.member.roles.add(identrelacado)
                             response = 'Compra realizada com sucesso!';
                         }else{invalidado == true
@@ -745,7 +741,8 @@ module.exports = {
             //OPÇÕES DA LOJA
             const opcoesgerais = [
                 { label: 'Documento Aleatório', description: '20 ZENS', value: 'doc' },
-                { label: 'Palavras Importantes', description: '8000 ZENS', value: 'infos' },
+                { label: 'Sussurros Históricos', description: '100 ZENS', value: 'sussurros' },
+                { label: 'Palavras Importantes', description: '10000 ZENS', value: 'infos' },
                 { label: 'Emote', description: '100000 ZENS', value: 'emote' },
                 { label: 'Desenho', description: '1000000 ZENS', value: 'desenho' },
             ]
@@ -754,7 +751,8 @@ module.exports = {
                 { name: '》══════════════════════════════════════════════ ◈', value: '\n'},
                 { name: '\n「RPG」', value: `\u200B` },
                 { name: 'Documento Aleatório', value: '20 ZENS\nIrá enviar um documento aleatório.', inline: true },
-                { name: 'Palavras Importantes', value: '8000 ZENS\nIrá dar uma informação aleatória das Campanhas de RPG no Palavras Importantes!', inline: true },
+                { name: 'Sussurros Históricos', value: '100 ZENS\nIrá um conto de uma das Sessões das Campanhas do Servidor!.', inline: true },
+                { name: 'Palavras Importantes', value: '10000 ZENS\nIrá dar uma informação aleatória das Campanhas de RPG no Palavras Importantes!', inline: true },
                 { name: 'Emote', value: '100000 ZENS\nVocê terá direito a um emote para o servidor que seja relacionado ao RPG!', inline: true },
                 { name: 'Desenho', value: '1000000 ZENS\nVocê terá direito a um desenho (possível) de qualquer coisa que deseje relacionada ao RPG.', inline: true },
                 { name: '》══════════════════════════════════════════════ ◈', value: '\n'},
@@ -777,20 +775,35 @@ module.exports = {
                 let response;
                 switch (i.values[0]) {
                     case 'infos':
-                        if(Cobrar(8000)){
-                            Compra(8000);
-                        const numeroSorteado = Math.floor(Math.random() * 2) + 1;
-                        let palavras = []
+                        if(Cobrar(10000)){
+                            Compra(10000);
+                        let palavras
+                        let numeroSorteado = Math.floor(Math.random() * 2) + 1;
+                        let valorOrdem = data2.ordemvalor
+                        let valorNE = data2.noitevalor
+                        let palavrasOrdem = JSON.parse(fs.readFileSync(frasespoyo, 'utf-8')).ORDEM;
+                        let palavrasNE = JSON.parse(fs.readFileSync(frasespoyo, 'utf-8')).NOITEESCURA;
                         let valorfrase;
+                        if(palavrasOrdem.length == valorOrdem){
+                            numeroSorteado = 2
+                            console.log("Verificação Ordem passou aq")
+                        } else if(palavrasOrdem.length == valorNE){
+                            numeroSorteado = 1
+                            console.log("Verificação NE passou aq")
+                        }else if(palavrasOrdem.length == valorNE && palavrasOrdem.length == valorOrdem){
+                            interaction.user.send({ content: "Não tem mais palavras importantes no estoque..."})
+                            console.log("Verificação Final passou aq")
+                            return;
+                        }
                         if(numeroSorteado == 1){
-                            palavras = JSON.parse(fs.readFileSync(frasespoyo, 'utf-8')).ORDEM;
-                            valorfrase = data2.ordemvalor
+                            palavras = palavrasOrdem
+                            valorfrase = "data2.ordemvalor"
                             console.log(data2.ordemvalor)
                             data2.ordemvalor++
                         }
                         if(numeroSorteado == 2){
-                            palavras = JSON.parse(fs.readFileSync(frasespoyo, 'utf-8')).NOITEESCURA;
-                            valorfrase = data2.noitevalor
+                            palavras = palavrasNE
+                            valorfrase = "data2.noitevalor"
                             console.log(data2.noitevalor)
                             data2.noitevalor++
                         }
@@ -823,6 +836,54 @@ module.exports = {
                             const randomdoc = Docs.documentos;
                             response = randomdoc[Math.floor(Math.random() * randomdoc.length)];
                             await interaction.channel.send({ content: response});
+                        } else {
+                            invalidado = true;
+                            break;
+                        }
+                        return
+                    case 'sussurros':
+                        if (Cobrar(100) && Compra(100)) {
+                            const frasesbobby = datasussurros.sussurros;
+                            const randomIndex = Math.floor(Math.random() * frasesbobby.length);
+                            let randomMeme = ".";
+                            let imagem = ".";
+
+                            if(randomIndex == 0) {
+                                const random = frasesbobby[randomIndex].EMPIREO;
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/c9/61/D0xuAP00_o.png";
+                            } else if(randomIndex == 1) {
+                                const random = frasesbobby[randomIndex].EDFU;
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/7f/82/0s1UlP5q_o.png";
+                            } else if(randomIndex == 2) {
+                                const random = frasesbobby[randomIndex].NOITEESCURA;
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/a1/46/xkfejCBm_o.png";
+                            } else if(randomIndex == 3) {
+                                const random = frasesbobby[randomIndex].AFANO;
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/4a/1e/jZ4jAfgH_o.png";
+                            } else if(randomIndex == 4) {
+                                const random = frasesbobby[randomIndex].TROPICAL;
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/80/f4/ZuEe2Pve_o.png";
+                            } else if(randomIndex == 5) {
+                                const random = frasesbobby[randomIndex].THANATOS;
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/40/b1/zwuJIKfb_o.png";
+                            } else if(randomIndex == 6){
+                                const random = frasesbobby[randomIndex].SOLARENS
+                                randomMeme = random[Math.floor(Math.random() * random.length)];
+                                imagem = "https://images2.imgbox.com/b6/52/q7Nf0vdh_o.png"
+                            }
+
+                            const frases = "*sussurros...*\n\n\n" + "# " + randomMeme;
+                            interaction.user.send({
+                                content: frases, 
+                                files: [{ attachment: imagem }]
+                            });
+
                         } else {
                             invalidado = true;
                             break;

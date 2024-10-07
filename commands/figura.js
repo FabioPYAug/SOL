@@ -57,13 +57,13 @@ module.exports = {
 		const focusedOption = interaction.options.getFocused(true);
 		let choices;
         if (focusedOption.name === "joaozinho"){
-            choices = ["Aparência", "Competir", "Conselhos", "Dados", "Expressões", "Frase Aleatória", "Horóscopo", "Piadas", "Playlist", "Quantidade de Frases"]
+            choices = ["Aparência", "Artes", "Competir", "Conselhos", "Dados", "Expressões", "Frase Aleatória", "Horóscopo", "Piadas", "Playlist", "Quantidade de Frases"]
         }
         if (focusedOption.name === "parisa"){
-            choices = ["Aparência", "Competir", "Conselhos", "Dados", "Expressões", "Frase Aleatória", "Horóscopo", "Piadas", "Playlist", "Quantidade de Frases"]
+            choices = ["Aparência", "Artes", "Competir", "Conselhos", "Dados", "Expressões", "Frase Aleatória", "Horóscopo", "Piadas", "Playlist", "Quantidade de Frases"]
         }
         if (focusedOption.name === "poyo"){
-            choices = ["Aparência", "Competir", "Conselhos", "Dados", "Expressões", "Frase Aleatória", "Horóscopo", "Piadas", "Playlist", "Quantidade de Frases"]
+            choices = ["Aparência", "Artes", "Competir", "Conselhos", "Dados", "Expressões", "Frase Aleatória", "Horóscopo", "Piadas", "Playlist", "Quantidade de Frases"]
         }
 		const filtered = choices.filter(choice => choice.startsWith(focusedOption.value));
 
@@ -88,13 +88,15 @@ if(interaction.options.getString('joaozinho')){
     const expressoes = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).joaozinhoexpressoes;
     const aparencia = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).joaozinhoaparencia;
     
+    if(joaozinho == "Artes"){
+        await interaction.reply("**Um sofá arranhado...**")}
 
     if(joaozinho == "Frase Aleatória"){
         const random = frase[Math.floor(Math.random() * frase.length)];
         await interaction.reply('*"' + random + '"*')}
 
     if(joaozinho == "Quantidade de Frases"){
-        const tamanho = frase.length + 2 + expressoes.length
+        const tamanho = frase.length + 3 + expressoes.length
         await interaction.reply({content:`O Joãozinho tem **${tamanho}** frases!`, ephemeral: true})}
     
     if(joaozinho == "Competir"){
@@ -155,6 +157,7 @@ if(interaction.options.getString('joaozinho')){
             const expressoes = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).parisaexpressoes;
             const aparencia = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).parisaaparencia;
             const horoscopo = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).parisahoroscopo;
+            const Artes = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).parisadesenhos;
 
             const random = frase[Math.floor(Math.random() * frase.length)];
             const randomconselho = fraseconselho[Math.floor(Math.random() * fraseconselho.length)];
@@ -164,8 +167,12 @@ if(interaction.options.getString('joaozinho')){
             if(parisa == "Frase Aleatória"){
                 await interaction.reply('*"' + random + '"*')}
 
+            if(parisa == "Artes"){
+                const randomarte = Artes[Math.floor(Math.random() * Artes.length)];
+                await interaction.reply(randomarte)}
+
             if(parisa == "Quantidade de Frases"){
-                const tamanho = frase.length + frasederrota.length + horoscopo.length + fraseganhou.length + fraseempate.length + fraseconselho.length + frasefalha.length + frasecritico.length + piada.length + expressoes.length
+                const tamanho = frase.length + frasederrota.length + horoscopo.length + fraseganhou.length + fraseempate.length + fraseconselho.length + frasefalha.length + frasecritico.length + piada.length + Artes.length + expressoes.length
                 await interaction.reply({content: `A Parisa tem **${tamanho}** frases!`, ephemeral: true})}
 
             if(parisa == "Competir"){
@@ -282,13 +289,18 @@ if(interaction.options.getString('joaozinho')){
             const piadas = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).poyopiadas;
             const expressoes = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).poyoexpressoes;
             const aparencia = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).poyoaparencia;
+            const Artes = JSON.parse(fs.readFileSync(frasespath, 'utf-8')).poyodesenhos;
+
+            if(poyo == "Artes"){
+                const randomartespoyo = Artes[Math.floor(Math.random() * Artes.length)];
+                await interaction.reply(randomartespoyo)}
 
             if(poyo == "Frase Aleatória"){
                 const random = frase[Math.floor(Math.random() * frase.length)];
                 await interaction.reply('*"' + random + '"*')}
 
             if(poyo == "Quantidade de Frases"){
-                const tamanho = frase.length + 2 + conselhos.length + piadas.length + expressoes.length
+                const tamanho = frase.length + 2 + conselhos.length + piadas.length + expressoes.length + Artes.length
                 await interaction.reply({content:`O Poyo tem **${tamanho}** frases!`, ephemeral: true})}
             
             if(poyo == "Competir"){

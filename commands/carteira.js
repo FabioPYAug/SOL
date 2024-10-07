@@ -20,6 +20,7 @@ const otavioid = "1002730228998742067"
 const vitorid = "340298478494154752"
 const pauloid = "862809964401393665"
 const gabrielid = "507585124624236545"
+const thuanyId = "406048394650451969"
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -36,10 +37,6 @@ module.exports = {
                 const JSONDADOS = fs.readFileSync(frasespath, 'utf8');
                 return JSON.parse(JSONDADOS);
                 }
-            }
-            function writeDataToFile(data) {
-                const jsonString = JSON.stringify(data, null, 2);
-                fs.writeFileSync(frasespath, jsonString, 'utf8');
             }
             const data = readDataFromFile();
             const canvas = Canvas.createCanvas(700, 250);
@@ -166,6 +163,7 @@ module.exports = {
             if(userId == otavioid){dinheiro = data.DINHEIRO.otavio}
             if(userId == pauloid){dinheiro = data.DINHEIRO.paulo}
             if(userId == vitorid){dinheiro = data.DINHEIRO.vitor}
+            if(userId == thuanyId){dinheiro = data.DINHEIRO.thuany}
 
             // Desenha o número aleatório abaixo do texto "DINHEIRO"
             const numberText = dinheiro.toLocaleString();

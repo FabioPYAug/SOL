@@ -46,10 +46,12 @@
     "A ampulheta de Memento Mori ficou perdida em algum lugar de Thanatos.",
     "Aurora, a vendedora de Flores e roupas em Thanatos era apaixonada na irmã mais nova, porém, também era tímida demais para dar em cima.",
     "O cemitério de Thanatos possui exatas 43 lápides. Nenhuma delas é a Helga Ashyriver",
-    "Aguero Agnes teve um pai e mãe, porém abandonaram ele.",
+    "Aguero Agnes teve um pai e mãe, porém, abandonaram ele.",
     "Willian Snow ainda está dentro da mente de Bianca. Poucas vezes eles se comunicam.",
     "A estaca em espiral que a Flora estava antes do ritual ser finalizado representava o ínicio, meio e fim ao mesmo tempo.",
-    "Miguel é agente da Ordem atualmente."
+    "Miguel é agente da Ordem atualmente.",
+    "A junção do Sangue e da Morte traz mundaças drasticas nos sentidos e vontades da pessoa que entrou em contato.",
+    "A Ilha do Amor foi comprada pela empresa Memórias dos Tempos Felizes em 2008, no ínicio do ano. Inclusive, muitos não gostaram da nova política, e essa opinião cresceu muito mais após a morte de Renata."
   ],
   "NOITEESCURA": [
     "Apesar das dificuldades, após a volta do sucesso de Kruspoll, Koga recebe um certificado Oficial da Guilda de Aystea como Ferreira de Qualidade A",
@@ -82,7 +84,7 @@
     "Gege, o atendente do hotel que o PlinPlinPlon eletrocutou, vive rasgando suas roupas pois acha que é Estilo. Ele já recebeu esmolas na rua por acharem que ele é pobre.",
     "O vilarejo do Plin Plin Plon, Lokeorn, é focado totalmente em mineração e é dividido em duas partes: a da superfície, onde estão as casas das pessoas com maiores condições financeiras, e a parte dentro da montanha, onde vivem aqueles que não têm tanto dinheiro.",
     "Morgana, namorada/ficante/ficante sério de Flora está atualmente em Kruspoll, pois, seu pai está muito doente.",
-    "Nila é um membro muito famoso nos Revolucionários, participando de diversas missões.",
+    "Nila é uma membra muito famosa nos Revolucionários, participando de diversas missões.",
     "A roupa da Fahlir foi projetada por Keanu e é considerado uma de suas melhores obras.",
     "Snuglle já destruiu uma fortaleza",
     "O motorista que levou o grupo Eclipse para o Bórdel Bola de Fogo morreu depois de usar das drogas que circulam pela cidade.",
@@ -101,9 +103,13 @@
     "A muralha que divide Aystea e Zoystea é tão grande que é comum ver passaros mortos próximo dela.",
     "Manu Ducasse, o cozinheiro dos Revolucionários, considera a Tina como filha.",
     "Maria, antes de ir para o Sul, se candidatou para auxiliar na ala médica dos Revolucionários.",
-    "O homem que morreu no banheiro da Blácê devido falhas técnicas, era dono de um micro comércio de panos de limpeza. Ele usava aquele dinheiro para sustentar sua sobrinha que estava com uma doença terminal.",
-    "A Blácê tem cerca de 95/5: 95% das pessoas ficam sem dinheiro e 5% com dinheiro e depois perdem apostando no charisma."
+    "O homem que morreu no banheiro da Blácê devido falhas técnicas, era dono de um micro comércio de panos de limpeza. Ele usava aquele dinheiro para sustentar sua sobrinha que estava com uma doença terminal. Mas, que infelizmente, morreu poucos dias atrás.",
+    "A Blácê tem cerca de 95/5: 95% das pessoas ficam sem dinheiro e 5% com dinheiro e depois perdem apostando no charisma.",
+    "Turok encontrou Shou em Zoystea. Shou estava passando por lá pois estava em uma missão muito importante.",
+    "Baúrda é o nome que se usava para se referir a bases. O que, hoje em dia, é considerado como Masmorras Antigas.",
+    "Rinu é titulado como a Bondade Pura.",
+    "Rox é uma Druida cega pelo passado, sendo considerada uma das mais fortes magas de toda a base."
   ],
-  "noitevalor": 22,
-  "ordemvalor": 24
+  "noitevalor": 55,
+  "ordemvalor": 52
 }
