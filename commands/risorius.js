@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { info } = require("console");
 
-const totalcartas = 127
+const totalcartas = 128
 //ID DOS CARGOS E CANAIS GERAIS
 const frasespath = path.join(__dirname, '..', 'comunidade', 'risorius.json');
 const imagenspath = path.join(__dirname, '..', 'comunidade', 'imagens.json');
@@ -67,6 +67,7 @@ const imaculadoid = "1277775778888679577"
 const ancestralidadeid = "1277775959969366107"
 const leiguidadeid = "1290956360661602354"
 const Eventualid = ""
+const aflicaoid = ""
 
 const amandaid = "407937359389261858"
 const alvaroid = "546734558431674369"
@@ -282,6 +283,10 @@ module.exports = {
                 }
 
                 //EFEITOS DE AZAR
+                if (user.roles.cache.has(aflicaoid)){//AFLIÇÃO
+                    user.roles.remove(aflicaoid);
+                    let eventualidade = Math.floor(Math.random() * 100) + 1;
+                    if (eventualidade > 0 && eventualidade < 26){roletabobby = roletabobby - (80 * linguagato)}}
                 if (user.roles.cache.has(ancoraid)) { //AZAR PESADO
                     roletabobby = roletabobby - (datafrase.infos.ancora) * linguagato}
                 if (user.roles.cache.has(assustadoid)) { //AZAR DO NINHO DO DRAGÃO
@@ -321,6 +326,10 @@ module.exports = {
                     roletabobby = (750 - Math.floor(Math.random() * 300))}
 
                 //EFEITOS DE SORTE
+                if (user.roles.cache.has(Eventualid)){//EVENTUALIDADE
+                    user.roles.remove(Eventualid);
+                    let eventualidade = Math.floor(Math.random() * 100) + 1;
+                    if (eventualidade > 0 && eventualidade < 26){roletabobby = roletabobby + (80 * trevodourado)}}
                 if (user.roles.cache.has(entrelaid)) {//SORTE ENTRELAÇADOS
                     if(!datafrase.infos.laços <= 0){
                         roletabobby = roletabobby + 30 * trevodourado
@@ -592,7 +601,7 @@ module.exports = {
                     embeds.setThumbnail("https://images2.imgbox.com/4e/d7/VyXxuL1x_o.png")
                 }
             }
-            //120 - CARTAS:
+            //121 - CARTAS:
             async function CARTAS(roletabobby){
             //1/1 SOLAR
             if (roletabobby >= 1375){
@@ -1695,7 +1704,7 @@ module.exports = {
                         mensagem.edit(`${texto}`)}}
 
             }
-            //8/12 LAMENTÁVEL (50-99)
+            //9/12 LAMENTÁVEL (50-99)
             if (roletabobby > 50 && roletabobby <= 99){
                 const teste100 = getporce(50, 99)
                 embeds.setColor("DarkOrange")
@@ -1760,6 +1769,13 @@ module.exports = {
                     const randomItem = RANDOMPOSITIVO(listanegativa);
                     interaction.member.roles.add(randomItem)
                     WFFs(user, randomItem)}
+                //AFLIÇÃO
+                if (roletabobby > 930 && roletabobby <= 934){
+                    embeds.setTitle(`AFLIÇÃO`)
+                    embeds.setDescription(`Essa carta irá te dar uma agonia em sua vida, um sentimento e uma sensação de desconforto. Com este efeito você terá 25% de chance de receber um Azar médio toda vez que jogar no Risorius`)
+                    embeds.setThumbnail("https://images2.imgbox.com/bb/3c/YGalobRk_o.png")
+                    interaction.member.roles.add(aflicaoid);
+                    WFFs(user, aflicaoid)}
                 //AIIII QUE PREGUIÇAAA
                 if (roletabobby > 93 && roletabobby <= 96){
                     embeds.setTitle(`AIIII QUE PREGUIÇAAA`)
