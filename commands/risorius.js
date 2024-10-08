@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { info } = require("console");
 
-const totalcartas = 120
+const totalcartas = 127
 //ID DOS CARGOS E CANAIS GERAIS
 const frasespath = path.join(__dirname, '..', 'comunidade', 'risorius.json');
 const imagenspath = path.join(__dirname, '..', 'comunidade', 'imagens.json');
@@ -66,6 +66,7 @@ const wffid = "1277718062128173137"
 const imaculadoid = "1277775778888679577"
 const ancestralidadeid = "1277775959969366107"
 const leiguidadeid = "1290956360661602354"
+const Eventualid = ""
 
 const amandaid = "407937359389261858"
 const alvaroid = "546734558431674369"
@@ -590,10 +591,8 @@ module.exports = {
                     embeds.setDescription(`Você não é o único que está aqui, temos milhares de mentes, pensamentos, sentimentos e todos eles, almejam algo... Você não é melhor que ninguém. Está carta irá dar um palavras importantes!`)
                     embeds.setThumbnail("https://images2.imgbox.com/4e/d7/VyXxuL1x_o.png")
                 }
-
-
             }
-            //105 - CARTAS:
+            //120 - CARTAS:
             async function CARTAS(roletabobby){
             //1/1 SOLAR
             if (roletabobby >= 1375){
@@ -880,21 +879,21 @@ module.exports = {
                     }, 60000 )}}
 
             }
-            //10/12 SUPERIOR
+            //12/12 SUPERIOR
             if (roletabobby > 900 && roletabobby <= 950){
                 const teste100 = getporce(901, 950)
                 embeds.setColor("DarkAqua")
                 embeds.setAuthor({ name: `Superior`, iconURL: "https://images2.imgbox.com/e5/71/fFV7HGgZ_o.png"})
                 embeds.setFooter({ text: `Chance: ${teste100}%`});
                 //GLORIFICAR
-                if (roletabobby > 900 && roletabobby <= 905){
+                if (roletabobby > 900 && roletabobby <= 904){
                     embeds.setTitle(`GLORIFICAÇÃO`)
                     embeds.setDescription(`Essa carta serve para mostrar o quão perfeitx você é. \nO ${interaction.user} é admirável, agradável, alegre, amável, apaixonante, apreciável, arrojado, astuto, autêntico, bem-humorado, bondoso, brilhante, carinhoso, carismático, cativante, competente, confiável, corajoso, criativo, culto, dedicado, determinado, digno, diplomático, dinâmico, doce, educado, eficaz, eficiente, elegante, emocionante, encantador, engenhoso, entusiasta, equilibrado, espetacular, espirituoso, esplêndido, estimado, ético, excepcional, exemplar, exímio, extraordinário, fabuloso, fantástico, fiel, forte, formidável, generoso, genial, gentil, gracioso, grandioso, heroico, honesto, honrado, íntegro, inovador, inspirador, inteligente, íntimo, irresistível, jovial, justo, leal, lindo, lúcido, magnífico, maravilhoso, memorável, meticuloso, notável, nobre, obstinado, original, otimista, paciente, perceptivo, perfeito, perseverante, perspicaz, ponderado, positivo, precioso, prestativo, primoroso, proativo, prodigioso, proeminente, prudente, puro, querido, radiante, realista, refinado, resiliente, resoluto, respeitável, responsável, rigoroso, sagaz, sábio, seguro, sensato, sensível, sereno, simpático, singular, solidário, sublime, talentoso, tenaz, tolerante, triunfante, único, valente, valoroso, versátil, virtuoso, visionário, vivaz, vigoroso, vitorioso e zeloso!\n\nEspero que tenha um dia perfeito, e para ajudar, irei te Glorificar, pois você merece😘. Sua próxima carta será de raridade 100% como POSITIVA.`)
                     embeds.setThumbnail("https://images2.imgbox.com/99/f0/lZVdpFme_o.png")
                     BFFs(user, glorificadoid)
                     interaction.member.roles.add(glorificadoid)}
                 //AJUDANTE DO POVO
-                if (roletabobby > 905 && roletabobby <= 910){
+                if (roletabobby > 904 && roletabobby <= 908){
                     embeds.setTitle(`AJUDANTE DO POVO`)
                     embeds.setDescription(`Você é a verdadeira bondade pura! Você irá dar sorte média para todos do servidor!`)
                     embeds.setThumbnail("https://images2.imgbox.com/2e/b0/W0BrGezh_o.png")
@@ -907,7 +906,7 @@ module.exports = {
                         contador++
                         member.roles.add(afortunado)}}
                 //POTE DE OURO
-                if (roletabobby > 910 && roletabobby <= 915){
+                if (roletabobby > 908 && roletabobby <= 912){
                     if (datafrase.eventos.tipo != "normal"){roletabobby = 900}
                     if (roletabobby >= 910 && roletabobby <= 915){
                     embeds.setTitle(`POTE DE OURO`)
@@ -924,14 +923,14 @@ module.exports = {
                         }, 3600000);
                     }, 60000 )}}
                 //AFORTUNADO
-                if (roletabobby > 915 && roletabobby <= 920){
+                if (roletabobby > 912 && roletabobby <= 916){
                     embeds.setTitle(`AFORTUNADA`)
                     embeds.setDescription(`Essa carta traz a fortuna, te dando uma sorte média na próxima carta`)
                     interaction.member.roles.add(afortunado);
                     BFFs(user, afortunado)
                     embeds.setThumbnail("https://images2.imgbox.com/dc/6f/CLWIIy4j_o.png")}
                 //RAPI E DASH
-                if (roletabobby > 920 && roletabobby <= 925){
+                if (roletabobby > 916 && roletabobby <= 920){
                     embeds.setTitle(`RAPI E DASH`)
                     embeds.setDescription(`Essa carta faz com que você seja tão rápido nas cartas que chamas aparecem em suas mãos, um verdadeiro diabo das apostas. \nO Cooldown do bot para você é diminuido em 2x a partir de agora e caso tenha pego algum status de lerdeza, ele será apagado.`)
                     embeds.setThumbnail("https://images2.imgbox.com/0c/43/n0mab3pK_o.png")
@@ -943,7 +942,7 @@ module.exports = {
                         interaction.member.roles.add(aceleradoid)
                         BFFs(user, aceleradoid)}}
                 //XLR8
-                if (roletabobby > 925 && roletabobby <= 928){
+                if (roletabobby > 920 && roletabobby <= 924){
                     embeds.setTitle(`XLR8`)
                     embeds.setDescription(`յყ ﻨร รօ νﻨռռﻨց ժձէ յყ ռﻨε εεгร հﻨεгժﻨε աօօгժε ĸձռ lεεร ռﻨε, հսllε ﻨร รօ օռժսﻨժεlﻨĸ. \nO Cooldown do bot para você é diminuido em 2.5x a partir de agora e caso tenha pego algum status de lerdeza, ele será apagado.`)
                     embeds.setThumbnail("https://images2.imgbox.com/c3/a5/6Ieqw0b2_o.png")
@@ -955,7 +954,7 @@ module.exports = {
                     if(!user.roles.cache.has(rapidoid) && !user.roles.cache.has(aceleradoid) && !user.roles.cache.has(speedrunnerid) && !user.roles.cache.has(heronosid)){
                     interaction.member.roles.add(celerissimoid)}}
                 //COFRE DA DINASTIA
-                if (roletabobby > 928 && roletabobby <= 935){
+                if (roletabobby > 924 && roletabobby <= 927){
                     embeds.setTitle(`COFRE DA DINASTIA`)
                     embeds.setDescription(`Essa carta te permite acessar o Cofre dos Reis de Aystea através do poder de Bobby. Ao acessar, a carta irá rolar 1d20, tendo essas opções:\n\n-Caso caia valores maiores que 1 e menores que 20, você irá dobrar o valor dentro do cofre\n-Caso caia 1 você irá resetar todo o valor dentro do cofre\n-Caso caia 20 você irá pegar o valor para você e será resetado).\n\n\nTABELA DE PREÇOS:\n\n🟩 1 a 16 JONS: Sorte Minuscula\n🟩 32 a 256 JONS:Sorte Pequena\n🟩 512 a 2048 JONS: Sorte Média\n🟩 4096 a 16384 JONS: Sorte Grande\n🟩 32768 JONS para cime: Sorte Grande + Sorte pela quantidade de dinheiro\n\n🟦 Preço atual: ${datafrase.infos.dinastia} JONS`)
                     embeds.setThumbnail("https://images2.imgbox.com/e9/ad/Oz4ELYJz_o.png")
@@ -1000,8 +999,21 @@ module.exports = {
                         writeDataFraseToFile(datafrase)
                         var testopadrao = `Graças ao ${interaction.user} o dinheiro foi duplicado! Agora ele tem ${datafrase.infos.dinastia} JONS`
                     }interaction.channel.send(testopadrao)}
+                //ÁGUA PURA
+                if (roletabobby > 927 && roletabobby <= 930){
+                    embeds.setTitle(`ÁGUA PURA`)
+                    embeds.setDescription(`Essa carta irá te dar a água mais pura de todo o mundo! Caso você tenha pego a carta *Dor no RIm* e a sessão ainda não ocorreu, você poderá anular totalmente o dano. Caso você tenha pego *Dor no Rim* ela irá anular a próxima *Dor no Rim* (Não acumula)`)
+                    embeds.setThumbnail("https://images2.imgbox.com/bb/3c/YGalobRk_o.png")}
+                //EVENTUALIDADE
+                if (roletabobby > 930 && roletabobby <= 934){
+                    embeds.setTitle(`EVENTUALIDADE`)
+                    embeds.setDescription(`Essa carta irá te dar uma Sorte Eventual. Com este efeito você terá 25% de chance de receber uma sorte média toda vez que jogar no Risorius`)
+                    embeds.setThumbnail("https://images2.imgbox.com/bb/3c/YGalobRk_o.png")
+                    interaction.member.roles.add(Eventualid);
+                    BFFs(user, Eventualid)
+                }
                 //PRIMEIRA ESTACA
-                if (roletabobby > 935 && roletabobby <= 939){
+                if (roletabobby > 934 && roletabobby <= 940){
                     embeds.setTitle(`PRIMEIRA ESTACA`)
                     embeds.setDescription(`Essa carta irá te colocar na primeira estaca, tirando todos os seus status e colocando um novo status de sorte aleatório.`)
                     embeds.setThumbnail("https://images2.imgbox.com/bb/3c/YGalobRk_o.png")
@@ -1013,16 +1025,15 @@ module.exports = {
                         interaction.channel.send(`${interaction.user}, sua proteção foi gastada!`)}
                     const randomItem = RANDOMPOSITIVO(listapositiva);
                     interaction.member.roles.add(randomItem);
-                    BFFs(user, randomItem)
-                    }
+                    BFFs(user, randomItem)}
                 //RENDA EXTRA
-                if (roletabobby > 939 && roletabobby <= 944){
+                if (roletabobby > 940 && roletabobby <= 946){
                     embeds.setTitle(`RENDA EXTRA`)
                     embeds.setDescription(`Essa carta vai te dar uma renda extra para sua vida. Você irá ganhar 10k Zens.`)
                     embeds.setThumbnail("https://images2.imgbox.com/45/dd/yNdBaPOt_o.png")
                     DINHEIROTESTE(5000)}
                 //GRAVIDADE INVERTIDA   
-                if (roletabobby > 944 && roletabobby <= 950){
+                if (roletabobby > 946 && roletabobby <= 950){
                     if (datafrase.eventos.tipo != "normal"){roletabobby = 900}
                     if (roletabobby >= 942 && roletabobby <= 950){
                     embeds.setTitle(`GRAVIDADE INVERTIDA`)
@@ -1039,7 +1050,7 @@ module.exports = {
                         }, 3600000);
                     }, 60000 )}}
             }
-            //8/16 BENÉVOLA
+            //9/16 BENÉVOLA
             if(roletabobby > 750 && roletabobby <= 900){
                 const teste100 = getporce(751, 900)
                 embeds.setColor("DarkBlue")
@@ -1123,7 +1134,7 @@ module.exports = {
                         }, 300000);
                     }}  
             }
-            //33 COMUM (300-750)
+            //35 COMUM (300-750)
             if(roletabobby > 300 && roletabobby <= 700){
                 const teste100 = getporce(300, 750)
                 embeds.setColor("Grey")
