@@ -133,6 +133,7 @@ const cooldowns = {
     "Herónos": 120000,
     "Dev": 2000
 };
+let bloqueio
 let imperador
 let ninho
 datafrase.eventos.tipo = "normal"
@@ -467,6 +468,7 @@ module.exports = {
                 return (roletabobby)
             }
             async function LUNARSOLAR(){
+                //SOLAR
             if(user.roles.cache.has(divinoid)){
                 if(user.roles.cache.has(speedrunnerid)){
                     await interaction.member.roles.add(heronosid)
@@ -476,7 +478,17 @@ module.exports = {
                     await interaction.member.roles.add(juhurid)
                     await user.roles.remove(burladorid)
                 }}
-            }
+                //LUNAR
+            if(user.roles.cache.has(fardoid)){
+                if(user.roles.cache.has(espelho)){
+                    await interaction.member.roles.add(espelhoqueradoid)
+                    await user.roles.remove(espelho)
+                }
+                if(user.roles.cache.has(quebradoid)){
+                    await interaction.member.roles.add(destruidoid)
+                    await user.roles.remove(quebradoid)
+                }
+            }}
             function DINHEIROTESTE(valor){
                 const userMap = {
                     [fabioid]: 'fabio',
@@ -501,7 +513,6 @@ module.exports = {
             }
 
             //ROLETABOBBY
-            let bloqueio = false
             datafrase.dados.usos++
             if(!user.roles.cache.has(espelho)){
                 ancestral = Math.floor(Math.random() * 100) + 1
@@ -524,7 +535,9 @@ module.exports = {
                 await user.roles.remove(espelho)}
 
                 roletabobby = OutrosValores(roletabobby)
-                if(bloqueio == true){return}
+                if(bloqueio == true){
+                    bloqueio = false; 
+                    return}
                 console.log(`Valor com efeitos: ${roletabobby}\n-----------`)
                 await interaction.reply("Abrindo pacote de cartas...")
 
