@@ -6,3 +6,11 @@ Ele oferece uma série de funcionalidades que vão desde comandos úteis para as
 - Comandos de entretenimento: Além de comandos voltados para o RPG, o bot também conta com comandos engraçados e interativos para promover a diversão entre os membros.
 - Banco de imagens e ações: Utilizando um banco de dados em JSON, o bot é capaz de acessar e apresentar imagens e realizar ações pré-configuradas, trazendo mais dinâmica para as interações no servidor.
 
+
+<h4 align="center"> 
+	🚧  PREVISTO PARA A PRÓXIMA ATUALIZAÇÃO!  🚧
+</h4>
+
+- Atualização no comando "Risorius", com novas cartas;
+- Atualização no comando de Jogos gerais, com novo conjunto de jogo;
+- Atualização no comando "Loja", com novas mercadorias e sistema de recibo. 
