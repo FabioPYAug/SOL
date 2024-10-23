@@ -1,4 +1,9 @@
 ## SOL V.3.9.3
+
+![GitHub repo size](https://img.shields.io/github/repo-size/FabioPYAug/SOL?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/FabioPYAug/SOL?style=for-the-badge)
+![GitHub open pull requests](https://img.shields.io/github/issues-pr/FabioPYAug/SOL?style=for-the-badge)
+
 <p>Este bot foi criado com a intenção de facilitar a administração e as sessões de RPG online em um servidor de Discord. 
 Ele oferece uma série de funcionalidades que vão desde comandos úteis para as partidas até comandos engraçados voltados para a diversão.</p>
 
